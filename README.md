@@ -34,7 +34,25 @@ source ~/.devops/bin/activate
 
 ### Kubernetes Steps
 
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
-* Run via kubectl
+1. Setup and Configure Docker locally
+   * install docker-> [howto:]https://docs.docker.com/engine/install/
+   * Run `./run_docker.sh`
+   * Run `docker ps` to check if docker is running.
+   * Run `./make_prediction.sh` to make prediction and copy/paste the logging info at terminal to output_txt_files/docker_out.txt
+2. Setup and Configure Kubernetes locally
+    * Run `curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64`
+    * Run `sudo install minikube-darwin-amd64 /usr/local/bin/minikube`
+    * Run `minikube start`
+    * Run `kubectl get pods` to see which pods are running.
+    * Run `./run_kubernetes.sh`
+    * Run `./make_prediction.sh` to make prediction and copy/paste the logging info at terminal to `output_txt_files/kubernetes_out.txt`
+3. Create Flask app in Container
+    * Run `./run_docker.sh` to build and start the Flask app container.
+        
+   > The script will:
+   > * Build an docker image
+   > * List images to verify that this app is dockerized
+   > * Run a container with this specified image and map port 8000 (host) to 80 (container)
+
+   * Run `./upload_docker.sh` to upload the container to docker hub.
+   

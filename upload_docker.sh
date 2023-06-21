@@ -6,13 +6,13 @@
 # Step 1:
 # Create dockerpath
 # dockerpath=<your docker ID/path>
-dockerpath="clairelee7522/mlapi"
+dockerpath="gokhantrnd/udacity-boston"
 
 # Step 2:  
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
 docker login &&\
-    docker image tag mlapi $dockerpath
+    docker tag udacity-boston:latest ${dockerpath}:latest
 
 # Step 3:
 # Push image to a docker repository
