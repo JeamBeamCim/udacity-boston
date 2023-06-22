@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/JeamBeamCim/udacity-boston.svg?style=svg)](https://circleci.com/gh/JeamBeamCim/udacity-boston)
 # Operationalize-a-Machine-Learning-Microservice-API
 Microservice Project [Udacity Cloud DevOps Engineer Nanodegree]
 
